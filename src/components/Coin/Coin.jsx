@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
+
 export default class Coin extends Component {
   constructor(props) {
     super(props);
@@ -8,10 +9,6 @@ export default class Coin extends Component {
     this.state = {
       price: this.props.price
     }
-  }
-
-  componentDidMount() {
-    setInterval(() => this.refreshPrice(), 1000);
   }
 
   refreshPrice = () => {
@@ -25,6 +22,9 @@ export default class Coin extends Component {
         <td>{ this.props.name }</td>
         <td>{ this.props.ticker }</td>
         <td>${ this.state.price }</td>
+        <td>
+        <button onClick={this.refreshPrice}>Refresh</button>
+        </td>
       </tr>
     )
   }
