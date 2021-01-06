@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+
 
 export default class Coin extends Component {
   render() {
@@ -10,4 +12,10 @@ export default class Coin extends Component {
       </tr>
     )
   }
+}
+
+Coin.propTypes = {
+  name: PropTypes.string,
+  ticker: PropTypes.string,
+  price: PropTypes.number,
 }
