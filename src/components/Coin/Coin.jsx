@@ -8,10 +8,12 @@ export default class Coin extends Component {
       <tr>
         <td>{ this.props.name }</td>
         <td>{ this.props.ticker }</td>
-        {this.props.showBalance ? <td>{ this.props.balance }</td> : null}
+        { this.props.showBalance ? <td>{ this.props.balance }</td> : null }
         <td>${ this.props.price }</td>
         <td>
-        <button onClick={() => this.props.refreshPrice(this.props.ticker)}>Refresh</button>
+        <button onClick={() => this.props.refreshPrice(this.props.ticker)}>
+          Refresh
+        </button>
         </td>
       </tr>
     )

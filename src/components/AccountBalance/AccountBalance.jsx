@@ -6,8 +6,12 @@ export default class AccountBalance extends Component {
   render() {
     return (
       <section className="account-balance">
-        <button onClick={this.props.handleShowBalance}>{this.props.showBalance ? 'Hide ' : 'Show'} Balance</button>
-        <span className="balance-amount">{ this.props.showBalance ? `$${this.props.amount}` : '' }</span>
+        <button onClick={this.props.handleShowBalance}>
+          { this.props.showBalance ? 'Hide ' : 'Show' } Balance
+        </button>
+        <span className="balance-amount">
+          { this.props.showBalance ? `$${this.props.amount}` : '' }
+        </span>
       </section>
     )
   }

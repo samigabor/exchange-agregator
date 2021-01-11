@@ -45,28 +45,34 @@ class App extends Component {
   }
   
   refreshPrice = (tickerSelected) => {
-    const updatedCoins = this.state.coins.map(({ name, ticker, balance, price }) => {
-      let newPrice = price;
-      if (ticker === tickerSelected) {
+    const updatedCoins = this.state.coins.map((coin) => {
+      let newPrice = coin.price;
+      if (coin.ticker === tickerSelected) {
         const randomPercentage = 0.995 + Math.random() * 0.01;
         newPrice = Math.round(newPrice * randomPercentage * 1000) / 1000;
       }
       return {
-        name,
-        ticker,
-        balance,
+        ...coin,
         price: newPrice
       }
     });
-    this.setState({coins: updatedCoins});
+    this.setState({ coins: updatedCoins });
   }
     
   render() {
     return (
       <div className="App">
         <Header />
-        <AccountBalance amount={this.state.balance} showBalance={this.state.showBalance} handleShowBalance={this.handleShowBalance}/>
-        <Coins coins={this.state.coins} showBalance={this.state.showBalance} refreshPrice={this.refreshPrice}/>
+        <AccountBalance
+          amount={this.state.balance}
+          showBalance={this.state.showBalance}
+          handleShowBalance={this.handleShowBalance}
+        />
+        <Coins
+          coins={this.state.coins}
+          showBalance={this.state.showBalance}
+          refreshPrice={this.refreshPrice}
+        />
       </div>
     )
   }
