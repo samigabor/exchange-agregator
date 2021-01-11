@@ -1,19 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const Section = styled.section`
-  color: bisque;
-  text-align: start;
-  margin: 1.5rem 2rem;
-`;
+import './AccountBalance.css';
 
 export default class AccountBalance extends Component {
   render() {
     return (
-      <Section>
-        Balance: ${this.props.amount}
-      </Section>
+      <section className="account-balance">
+        <button onClick={this.props.handleShowBalance}>{this.props.showBalance ? 'Hide ' : 'Show'} Balance</button>
+        <span className="balance-amount">{ this.props.showBalance ? `$${this.props.amount}` : '' }</span>
+      </section>
     )
   }
 }

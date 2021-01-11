@@ -1,0 +1,9 @@
+.account-balance {
+  color: bisque;
+  text-align: start;
+  margin: 1.5rem 2rem;
+}
+
+.balance-amount {
+  padding-left: 10px;
+}

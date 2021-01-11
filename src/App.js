@@ -6,37 +6,46 @@ import AccountBalance from './components/AccountBalance/AccountBalance';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   
     this.state = {
       balance: 10000,
+      showBalance: true,
       coins: [
         {
           name: 'Bitcoin',
           ticker: 'BTC',
+          balance: 0.5,
           price: 37000
         },
         {
           name: 'Bitcoin Cash',
           ticker: 'BCH',
+          balance: 0,
           price: 400
         },
         {
           name: 'Ether',
           ticker: 'ETH',
+          balance: 32,
           price: 1200
         },
         {
           name: 'Theter',
           ticker: 'USDT',
+          balance: 1000,
           price: 1
         }
       ]
     }
   }
+
+  handleShowBalance = () => {
+    this.setState({showBalance: !this.state.showBalance});
+  }
   
   refreshPrice = (tickerSelected) => {
-    const updatedCoins = this.state.coins.map(({ name, ticker, price }) => {
+    const updatedCoins = this.state.coins.map(({ name, ticker, balance, price }) => {
       let newPrice = price;
       if (ticker === tickerSelected) {
         const randomPercentage = 0.995 + Math.random() * 0.01;
@@ -45,6 +54,7 @@ class App extends Component {
       return {
         name,
         ticker,
+        balance,
         price: newPrice
       }
     });
@@ -55,8 +65,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <AccountBalance amount={this.state.balance}/>
-        <Coins coins={this.state.coins} refreshPrice={this.refreshPrice}/>
+        <AccountBalance amount={this.state.balance} showBalance={this.state.showBalance} handleShowBalance={this.handleShowBalance}/>
+        <Coins coins={this.state.coins} showBalance={this.state.showBalance} refreshPrice={this.refreshPrice}/>
       </div>
     )
   }
