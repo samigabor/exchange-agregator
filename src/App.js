@@ -5,39 +5,35 @@ import Header from './components/Header/Header';
 import AccountBalance from './components/AccountBalance/AccountBalance';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  
-    this.state = {
-      balance: 10000,
-      showBalance: true,
-      coins: [
-        {
-          name: 'Bitcoin',
-          ticker: 'BTC',
-          balance: 0.5,
-          price: 37000
-        },
-        {
-          name: 'Bitcoin Cash',
-          ticker: 'BCH',
-          balance: 0,
-          price: 400
-        },
-        {
-          name: 'Ether',
-          ticker: 'ETH',
-          balance: 32,
-          price: 1200
-        },
-        {
-          name: 'Theter',
-          ticker: 'USDT',
-          balance: 1000,
-          price: 1
-        }
-      ]
-    }
+  state = {
+    balance: 10000,
+    showBalance: true,
+    coins: [
+      {
+        name: 'Bitcoin',
+        ticker: 'BTC',
+        balance: 0.5,
+        price: 37000
+      },
+      {
+        name: 'Bitcoin Cash',
+        ticker: 'BCH',
+        balance: 0,
+        price: 400
+      },
+      {
+        name: 'Ether',
+        ticker: 'ETH',
+        balance: 32,
+        price: 1200
+      },
+      {
+        name: 'Theter',
+        ticker: 'USDT',
+        balance: 1000,
+        price: 1
+      }
+    ]
   }
 
   handleShowBalance = () => {
@@ -46,15 +42,12 @@ class App extends Component {
   
   refreshPrice = (tickerSelected) => {
     const updatedCoins = this.state.coins.map((coin) => {
-      let newPrice = coin.price;
+      const updatedCoinValues = { ...coin };
       if (coin.ticker === tickerSelected) {
         const randomPercentage = 0.995 + Math.random() * 0.01;
-        newPrice = Math.round(newPrice * randomPercentage * 1000) / 1000;
+        updatedCoinValues.price = Math.round(coin.price * randomPercentage * 1000) / 1000;
       }
-      return {
-        ...coin,
-        price: newPrice
-      }
+      return updatedCoinValues;
     });
     this.setState({ coins: updatedCoins });
   }
