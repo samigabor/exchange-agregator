@@ -14,13 +14,14 @@ export default class Coins extends Component {
             </tr>
           </thead>
           <tbody>
-            { this.props.coins.map(({name, ticker, balance, price}) =>
+            { this.props.coins.map(({id, name, ticker, balance, price}) =>
               <Coin
+                id={id}
                 name={name}
                 ticker={ticker}
                 balance={balance}
                 price={price}
-                key={ticker}
+                key={id}
                 showBalance={this.props.showBalance}
                 refreshPrice={this.props.refreshPrice}
               />)

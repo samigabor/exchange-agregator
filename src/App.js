@@ -8,48 +8,49 @@ class App extends Component {
   state = {
     balance: 10000,
     showBalance: true,
-    coins: [
-      {
-        name: 'Bitcoin',
-        ticker: 'BTC',
-        balance: 0.5,
-        price: 37000
-      },
-      {
-        name: 'Bitcoin Cash',
-        ticker: 'BCH',
-        balance: 0,
-        price: 400
-      },
-      {
-        name: 'Ether',
-        ticker: 'ETH',
-        balance: 32,
-        price: 1200
-      },
-      {
-        name: 'Theter',
-        ticker: 'USDT',
-        balance: 1000,
-        price: 1
-      }
-    ]
+    coins: []
+  }
+
+  componentDidMount() {
+    fetch('https://api.coinpaprika.com/v1/coins')
+      .then(response => response.json())
+      .then(data => {
+        const topCoins = data.splice(0, 10).map(coin => ({
+          id: coin.id,
+          name: coin.name,
+          ticker: coin.symbol,
+          balance: 0,
+          price: 0
+        }));
+        this.setState({coins: topCoins});
+        this.updateCoinPrices();
+      })
+      .catch(err => console.log('Paprika API errored on me :(', err));
   }
 
   handleShowBalance = () => {
     this.setState({showBalance: !this.state.showBalance});
   }
+
+  updateCoinPrices = () => {
+    for (let coin of this.state.coins) {
+      this.refreshPrice(coin.id);
+    }
+  }
   
-  refreshPrice = (tickerSelected) => {
-    const updatedCoins = this.state.coins.map((coin) => {
-      const updatedCoinValues = { ...coin };
-      if (coin.ticker === tickerSelected) {
-        const randomPercentage = 0.995 + Math.random() * 0.01;
-        updatedCoinValues.price = Math.round(coin.price * randomPercentage * 1000) / 1000;
-      }
-      return updatedCoinValues;
+  refreshPrice = async (coinId) => {
+    await fetch(`https://api.coinpaprika.com/v1/ticker/${coinId}`)
+    .then(response => response.json())
+    .then(coinData => {
+      const updatedCoins = this.state.coins.map((coin) => {
+        const newCoin = { ...coin };
+        if (coin.id === coinId) {
+          newCoin.price = Math.round(coinData.price_usd * 1000) / 1000;
+        }
+        return newCoin;
+      });
+      this.setState({ coins: updatedCoins });
     });
-    this.setState({ coins: updatedCoins });
   }
     
   render() {
