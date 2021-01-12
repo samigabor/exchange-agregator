@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-
+import formatPrice from '../../helpers/format-price';
 
 export default class Coin extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Coin extends Component {
         <td>{ this.props.name }</td>
         <td>{ this.props.ticker }</td>
         { this.props.showBalance ? <td>{ this.props.balance }</td> : null }
-        <td>${ this.props.price }</td>
+        <td>{ formatPrice(this.props.price) }</td>
         <td>
         <button onClick={() => this.props.refreshPrice(this.props.id)}>
           Refresh

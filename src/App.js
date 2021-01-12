@@ -38,14 +38,14 @@ class App extends Component {
     }
   }
   
-  refreshPrice = async (coinId) => {
-    await fetch(`https://api.coinpaprika.com/v1/ticker/${coinId}`)
+  refreshPrice = (coinId) => {
+    fetch(`https://api.coinpaprika.com/v1/ticker/${coinId}`)
     .then(response => response.json())
     .then(coinData => {
       const updatedCoins = this.state.coins.map((coin) => {
         const newCoin = { ...coin };
         if (coin.id === coinId) {
-          newCoin.price = Math.round(coinData.price_usd * 1000) / 1000;
+          newCoin.price = Number(coinData.price_usd);
         }
         return newCoin;
       });
