@@ -1,0 +1,24 @@
+.coin-ticker,
+.coin-name {
+  line-height: 16px;
+  margin: 0;
+}
+
+.coin-ticker {
+  line-height: 16px;
+  margin: 0;
+}
+
+.coin-name {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.coin-icon-container {
+  width: 48px;
+  height: 48px;
+}
+
+.coin-icon-container > i {
+  font-size: 24px;
+}

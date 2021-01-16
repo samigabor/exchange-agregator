@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import Coins from './components/Coins/Coins';
 import Header from './components/Header/Header';
-import AccountBalance from './components/AccountBalance/AccountBalance';
+import './App.css';
 
 const api = 'https://api.coinpaprika.com/v1';
 
 function App() {
   const [balance, setBalance] = useState(10000);
-  const [showBalance, setShowBalance] = useState(true);
+  const [showBalance, setShowBalance] = useState(false);
   const [coins, setCoins] = useState([]);
 
   const toggleShowBalance = () => {
@@ -68,8 +67,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <AccountBalance
+      <Header
         amount={balance}
         showBalance={showBalance}
         handleShowBalance={toggleShowBalance}

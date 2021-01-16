@@ -1,0 +1,10 @@
+table {
+  margin: auto;
+  padding: 3rem;
+  width: 100%;
+  border-bottom: 1px solid #222531;
+}
+
+td {
+  border-top: 1px solid #222531;
+}
