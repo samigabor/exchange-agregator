@@ -8,6 +8,7 @@ const api = 'https://api.coinpaprika.com/v1';
 function App() {
   const [balance, setBalance] = useState(10000);
   const [showBalance, setShowBalance] = useState(false);
+  const [initialCoins, setInitialCoins] = useState([]);
   const [coins, setCoins] = useState([]);
 
   const toggleShowBalance = () => {
@@ -22,6 +23,15 @@ function App() {
     return fetch(`${api}/ticker/${coinId}`).then(response => response.json());
   }
 
+  const filterCoins = (event) => {
+    const keyword = event.target.value.trim().toLowerCase();
+    const filteredCoins = initialCoins.filter(coin => {
+      const coinText = `${coin.name.toLowerCase()} ${coin.ticker.toLowerCase()}`;
+      return coinText.includes(keyword);
+    });
+    setCoins(filteredCoins);
+  }
+
   const updateCoinPrices = async (coins) => {
     const prices = await Promise.all(coins.map(coin => getCoinById(coin.id)));
     const updatedCoins = coins.map((coin, index) => ({
@@ -29,6 +39,7 @@ function App() {
       price: Number(prices[index].price_usd)
     }));
     setCoins(updatedCoins);
+    setInitialCoins(updatedCoins);
   }
   
   const refreshPrice = async (coinId) => {
@@ -60,7 +71,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (coins.length === 0) {
+    if (initialCoins.length === 0) {
       componentDidMount();
     }
   });
@@ -76,6 +87,7 @@ function App() {
         coins={coins}
         showBalance={showBalance}
         refreshPrice={refreshPrice}
+        filterCoins={filterCoins}
       />
     </div>
   );

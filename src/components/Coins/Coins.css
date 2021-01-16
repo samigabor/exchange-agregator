@@ -8,3 +8,21 @@ table {
 td {
   border-top: 1px solid #222531;
 }
+
+.search-container {
+  background-color: #222531;
+  padding: 10px;
+}
+
+.search-input {
+  background-color: #343a40;
+  border: 1px solid darkgreen;
+  padding-left: 8px;
+  border-radius: 6px;
+}
+
+.search-input:focus {
+  outline: none;
+  caret-color: green;
+  color: beige;
+}
