@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/exchange-agregator/static/css/main.a7f86c53.chunk.css",
-    "main.js": "/exchange-agregator/static/js/main.30a20c57.chunk.js",
-    "main.js.map": "/exchange-agregator/static/js/main.30a20c57.chunk.js.map",
-    "runtime-main.js": "/exchange-agregator/static/js/runtime-main.09d74830.js",
-    "runtime-main.js.map": "/exchange-agregator/static/js/runtime-main.09d74830.js.map",
-    "static/js/2.ce0f61dc.chunk.js": "/exchange-agregator/static/js/2.ce0f61dc.chunk.js",
-    "static/js/2.ce0f61dc.chunk.js.map": "/exchange-agregator/static/js/2.ce0f61dc.chunk.js.map",
-    "static/js/3.2ef804ec.chunk.js": "/exchange-agregator/static/js/3.2ef804ec.chunk.js",
-    "static/js/3.2ef804ec.chunk.js.map": "/exchange-agregator/static/js/3.2ef804ec.chunk.js.map",
+    "main.css": "/exchange-agregator/static/css/main.07bc5ac3.chunk.css",
+    "main.js": "/exchange-agregator/static/js/main.dc067267.chunk.js",
+    "main.js.map": "/exchange-agregator/static/js/main.dc067267.chunk.js.map",
+    "runtime-main.js": "/exchange-agregator/static/js/runtime-main.feb4fbfd.js",
+    "runtime-main.js.map": "/exchange-agregator/static/js/runtime-main.feb4fbfd.js.map",
+    "static/css/2.ae9f1eb3.chunk.css": "/exchange-agregator/static/css/2.ae9f1eb3.chunk.css",
+    "static/js/2.0b401ae4.chunk.js": "/exchange-agregator/static/js/2.0b401ae4.chunk.js",
+    "static/js/2.0b401ae4.chunk.js.map": "/exchange-agregator/static/js/2.0b401ae4.chunk.js.map",
+    "static/js/3.29befbd0.chunk.js": "/exchange-agregator/static/js/3.29befbd0.chunk.js",
+    "static/js/3.29befbd0.chunk.js.map": "/exchange-agregator/static/js/3.29befbd0.chunk.js.map",
     "index.html": "/exchange-agregator/index.html",
-    "static/css/main.a7f86c53.chunk.css.map": "/exchange-agregator/static/css/main.a7f86c53.chunk.css.map",
-    "static/js/2.ce0f61dc.chunk.js.LICENSE.txt": "/exchange-agregator/static/js/2.ce0f61dc.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/exchange-agregator/static/media/logo.6ce24c58.svg"
+    "static/css/2.ae9f1eb3.chunk.css.map": "/exchange-agregator/static/css/2.ae9f1eb3.chunk.css.map",
+    "static/css/main.07bc5ac3.chunk.css.map": "/exchange-agregator/static/css/main.07bc5ac3.chunk.css.map",
+    "static/js/2.0b401ae4.chunk.js.LICENSE.txt": "/exchange-agregator/static/js/2.0b401ae4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.09d74830.js",
-    "static/js/2.ce0f61dc.chunk.js",
-    "static/css/main.a7f86c53.chunk.css",
-    "static/js/main.30a20c57.chunk.js"
+    "static/js/runtime-main.feb4fbfd.js",
+    "static/css/2.ae9f1eb3.chunk.css",
+    "static/js/2.0b401ae4.chunk.js",
+    "static/css/main.07bc5ac3.chunk.css",
+    "static/js/main.dc067267.chunk.js"
   ]
 }
