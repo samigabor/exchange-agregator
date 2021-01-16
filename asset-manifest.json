@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/exchange-agregator/static/css/main.07bc5ac3.chunk.css",
-    "main.js": "/exchange-agregator/static/js/main.dc067267.chunk.js",
-    "main.js.map": "/exchange-agregator/static/js/main.dc067267.chunk.js.map",
-    "runtime-main.js": "/exchange-agregator/static/js/runtime-main.feb4fbfd.js",
-    "runtime-main.js.map": "/exchange-agregator/static/js/runtime-main.feb4fbfd.js.map",
+    "main.css": "/exchange-agregator/static/css/main.eceeb768.chunk.css",
+    "main.js": "/exchange-agregator/static/js/main.8d3bb200.chunk.js",
+    "main.js.map": "/exchange-agregator/static/js/main.8d3bb200.chunk.js.map",
+    "runtime-main.js": "/exchange-agregator/static/js/runtime-main.30296575.js",
+    "runtime-main.js.map": "/exchange-agregator/static/js/runtime-main.30296575.js.map",
     "static/css/2.ae9f1eb3.chunk.css": "/exchange-agregator/static/css/2.ae9f1eb3.chunk.css",
-    "static/js/2.0b401ae4.chunk.js": "/exchange-agregator/static/js/2.0b401ae4.chunk.js",
-    "static/js/2.0b401ae4.chunk.js.map": "/exchange-agregator/static/js/2.0b401ae4.chunk.js.map",
-    "static/js/3.29befbd0.chunk.js": "/exchange-agregator/static/js/3.29befbd0.chunk.js",
-    "static/js/3.29befbd0.chunk.js.map": "/exchange-agregator/static/js/3.29befbd0.chunk.js.map",
+    "static/js/2.2435bea2.chunk.js": "/exchange-agregator/static/js/2.2435bea2.chunk.js",
+    "static/js/2.2435bea2.chunk.js.map": "/exchange-agregator/static/js/2.2435bea2.chunk.js.map",
+    "static/js/3.c47e36ff.chunk.js": "/exchange-agregator/static/js/3.c47e36ff.chunk.js",
+    "static/js/3.c47e36ff.chunk.js.map": "/exchange-agregator/static/js/3.c47e36ff.chunk.js.map",
     "index.html": "/exchange-agregator/index.html",
     "static/css/2.ae9f1eb3.chunk.css.map": "/exchange-agregator/static/css/2.ae9f1eb3.chunk.css.map",
-    "static/css/main.07bc5ac3.chunk.css.map": "/exchange-agregator/static/css/main.07bc5ac3.chunk.css.map",
-    "static/js/2.0b401ae4.chunk.js.LICENSE.txt": "/exchange-agregator/static/js/2.0b401ae4.chunk.js.LICENSE.txt"
+    "static/css/main.eceeb768.chunk.css.map": "/exchange-agregator/static/css/main.eceeb768.chunk.css.map",
+    "static/js/2.2435bea2.chunk.js.LICENSE.txt": "/exchange-agregator/static/js/2.2435bea2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.feb4fbfd.js",
+    "static/js/runtime-main.30296575.js",
     "static/css/2.ae9f1eb3.chunk.css",
-    "static/js/2.0b401ae4.chunk.js",
-    "static/css/main.07bc5ac3.chunk.css",
-    "static/js/main.dc067267.chunk.js"
+    "static/js/2.2435bea2.chunk.js",
+    "static/css/main.eceeb768.chunk.css",
+    "static/js/main.8d3bb200.chunk.js"
   ]
 }
