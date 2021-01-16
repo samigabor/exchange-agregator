@@ -33,13 +33,14 @@ function App() {
   }
 
   const updateCoinPrices = async (coins) => {
-    const prices = await Promise.all(coins.map(coin => getCoinById(coin.id)));
-    const updatedCoins = coins.map((coin, index) => ({
+    const topCoins = coins.slice(0, 10);
+    const restCoins = coins.slice(10);
+    const prices = await Promise.all(topCoins.map(coin => getCoinById(coin.id)));
+    const updatedCoins = topCoins.map((coin, index) => ({
       ...coin,
       price: Number(prices[index].price_usd)
     }));
-    setCoins(updatedCoins);
-    setInitialCoins(updatedCoins);
+    setCoins([...updatedCoins, ...restCoins]);
   }
   
   const refreshPrice = async (coinId) => {
@@ -57,13 +58,14 @@ function App() {
 
   const componentDidMount = async () => {
     await getAllCoins().then(data => {
-      const topCoins = data.splice(0, 10).map(coin => ({
+      const topCoins = data.slice(0, 100).map(coin => ({
         id: coin.id,
         name: coin.name,
         ticker: coin.symbol,
         balance: 0,
         price: 0
       }));
+      setInitialCoins(topCoins);
       setCoins(topCoins);
       updateCoinPrices(topCoins);
     })

@@ -8,6 +8,7 @@ export default function Coins(props) {
       <div className="search-container">
         <input type="text" className="search-input" placeholder="Search" onChange={props.filterCoins} />
       </div>
+      <div className="coins-container">
       <table>
         <tbody>
           { props.coins.map(({id, name, ticker, balance, price}) =>
@@ -24,6 +25,7 @@ export default function Coins(props) {
           }
         </tbody>
       </table>
+      </div>
     </>
   )
 }

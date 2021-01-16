@@ -9,12 +9,18 @@ td {
   border-top: 1px solid #222531;
 }
 
+.coins-container {
+  height: 75vh;
+  overflow-y: scroll;
+}
+
 .search-container {
   background-color: #222531;
   padding: 10px;
 }
 
 .search-input {
+  color: beige;
   background-color: #343a40;
   border: 1px solid darkgreen;
   padding-left: 8px;
