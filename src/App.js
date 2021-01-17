@@ -41,6 +41,7 @@ function App() {
       price: Number(prices[index].price_usd)
     }));
     setCoins([...updatedCoins, ...restCoins]);
+    setInitialCoins([...updatedCoins, ...restCoins]);
   }
   
   const refreshPrice = async (coinId) => {

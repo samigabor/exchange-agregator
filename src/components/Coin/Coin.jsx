@@ -1,11 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import formatPrice from '../../helpers/format-price';
 import Button from 'react-bootstrap/Button';
 import './Coin.css';
-import './btc.svg';
 
 export default function Coin(props) {
+  const formatter = Intl.NumberFormat('es-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+  const formatedPrice = formatter.format(props.price);
+
   return (
     <tr>
       <td className="d-flex align-items-center">
@@ -20,8 +24,8 @@ export default function Coin(props) {
 
       { props.showBalance ? <td>{ props.balance }</td> : null }
 
-      <td>{ formatPrice(props.price) }</td>
-      
+      <td>{ formatedPrice }</td>
+
       <td>
         <Button variant="info"  size="sm" onClick={() => props.refreshPrice(props.id)}>
           Refresh
