@@ -1,24 +1,25 @@
+.coin-icon-container {
+  width: 48px;
+}
+
+.coin-icon {
+  font-size: 24px;
+}
+
 .coin-ticker,
 .coin-name {
   line-height: 16px;
   margin: 0;
-}
-
-.coin-ticker {
-  line-height: 16px;
-  margin: 0;
+  max-width: 100px;
 }
 
 .coin-name {
   font-size: 12px;
   font-weight: 500;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 
-.coin-icon-container {
-  width: 48px;
-  height: 48px;
-}
-
-.coin-icon-container > i {
-  font-size: 24px;
+::-webkit-scrollbar {
+  display: none;
 }

@@ -63,9 +63,11 @@ function App() {
         id: coin.id,
         name: coin.name,
         ticker: coin.symbol,
-        balance: 0,
+        balance: Math.round(Math.random() * 10000) / 100,
         price: 0
       }));
+      const balances = topCoins.map(coin => coin.balance);
+      setBalance(balances.reduce((a, b) => a + b, 0));
       setInitialCoins(topCoins);
       setCoins(topCoins);
       updateCoinPrices(topCoins);
@@ -82,16 +84,17 @@ function App() {
   return (
     <div className="App">
       <Header
-        amount={balance}
         showBalance={showBalance}
         handleShowBalance={toggleShowBalance}
       />
       <Coins
         coins={coins}
+        balance={balance}
         showBalance={showBalance}
         refreshPrice={refreshPrice}
         filterCoins={filterCoins}
       />
+      {/* <div>Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
     </div>
   );
 }
